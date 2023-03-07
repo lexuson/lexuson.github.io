@@ -1,0 +1,436 @@
+/*===== Google_font_import_url =====*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/*===== CSS_VARIABLES  =====*/
+:root{
+  /*===== Font and typography =====*/
+  --body-font: 'Open Sans', sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+}
+/* ========== Reselution ================ */
+@media screen and (min-width: 768px){
+  :root{
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+/* 
+    .btn-toggle,
+    .btn-toggle:after {
+      width: 200px;
+      height: 86px;
+      line-height: 88px;
+    } */
+  
+}
+
+/*===== BASE_Border =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--first-color-dark);
+}
+
+h1{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== LOGIN =====*/
+.login{
+  display: grid;
+  grid-template-columns: 100%;
+  height: 100vh;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.login__content{
+  display: grid;
+}
+
+.login__img{
+  justify-self: center;
+}
+
+.login__img img{
+  width: 310px;
+  margin-top: 1.5rem;
+}
+
+.login__forms{
+  position: relative;
+  height: 368px;
+}
+
+.login__registre, .login__create{
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  background-color: var(--first-color-lighten);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0px 100px var(--first-color);              /*  shadow glowing */
+  animation-duration: .4s;
+  animation-name: animate-login;
+}
+
+@keyframes animate-login{
+  0%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.1,1.1);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+.login__title{
+  font-size: var(--h1-font-size);
+  margin-bottom: 2rem;
+}
+
+.login__box{
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: .5rem;
+  padding: 1.125rem 1rem;
+  background-color: var(--btn-color);               /* ============================== adding btn color =============================*/
+  margin-top: 1rem;
+  border-radius: .5rem;
+}
+
+.login__icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.login__input{
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  font-weight: 2rem;
+  color: var(--eye-blink);
+  background: none;
+}
+
+ .fa-eye{                               
+  position: absolute;
+  top: 12.2rem;
+  right: 2rem;
+  cursor: pointer;
+  color: var(--eye-blink);
+}
+
+.login__input::placeholder{
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  color: var(--first-color-light);
+}
+
+.login__forgot{
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-top: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: 600;
+  color: var(--first-color-light);
+}
+
+.login__button{
+  display: block;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: var(--first-color);
+  color:var(--btn-color);                        /*  button color */
+  font-weight: 600;
+  text-align: center;
+  border-radius: .5rem;
+  transition: .3s;
+}
+
+.login__button:hover{
+  background-color: var(--first-color-dark);
+}
+
+.login__account, .login__signin, .login__signup{
+  font-weight: 600;
+  font-size: var(--small-font-size);
+}
+
+.login__account{
+  color: var(--first-color-dark);
+}
+
+.login__signin, .login__signup{
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.login__social{
+  margin-top: 2rem;
+}
+
+.login__social-icon{
+  font-size: 1.5rem;
+  color: var(--first-color-dark);
+  margin: 0 1.5rem;
+}
+
+/*Show login*/
+.block{
+  display: block;
+}
+
+/*Hidden login*/
+.none{
+  display: none;
+}
+
+/* ===== MEDIA QUERIES =====*/
+@media screen and (min-width: 576px){
+  .login__forms{
+    width: 348px;
+    justify-self: center;
+    font-size: var(--normal-font-size);
+  }
+/* ================================================================dark mmode media queries========================================================= */
+  /* .btn-toggle,
+  .btn-toggle:after {
+    width: 200px;
+    height: 43px;
+    line-height: 44px;
+  } */
+}
+
+@media screen and (min-width: 1024px){
+  .login{
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .login__content{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+  }
+
+  .login__img{
+    display: flex;
+    width: 600px;
+    height: 588px;
+    background-color: var(--first-color-lighten);
+    border-radius: 1rem;
+    padding-left: 1rem;
+  }
+
+  .login__img img{
+    width: 390px;
+    margin-top: 0;
+  }
+
+  .login__registre, .login__create{
+    left: -11rem;
+  }
+
+  .login__registre{
+    bottom: -2rem;
+  }
+
+  .login__create{
+    bottom: -5.5rem;
+  }
+/* =======================================================   button media quiris====================================================== */
+  /* .btn-toggle,
+  .btn-toggle:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  } */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================================================================  Dark mode  ================================== */
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #eee;
+    /* --bkg-color: #121212; */
+    --btn-color: rgb(45, 45, 45);
+    --first-color: 	#865DFF;
+    --first-color-dark: #555dff;
+    --first-color-light: #555454;
+    --first-color-lighten: #0c0c0ce1;
+    --eye-blink:rgb(172, 172, 172);
+  }
+  body.light-theme {
+    --text-color: #0c0c0ce1;
+    --btn-color: rgb(172, 172, 172);
+    --first-color: #0E8388;
+    --first-color-dark: #555dff;
+    --first-color-light: #423f3b;
+    --first-color-lighten: #fcf8ecdc;
+    --eye-blink:rgb(45, 45, 45);
+  }
+}
+
+* {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* body {
+  background: var(--bkg-color);
+} */
+
+h1,
+p {
+  color: var(--text-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================     dark mode button with animation =========================================== */
+
+
+/* BUTTON GLITCH */
+.btn-toggle,
+.btn-toggle:after {
+  width: 140px;
+  height: 47px;
+  line-height: 20px;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Times New Roman', Times, serif;
+  background: linear-gradient(45deg, transparent 5%, var( --first-color) 5%);
+  border: 0;
+  color:var(--text-color);
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px var(--btn-color);
+  outline: transparent;
+  position: absolute;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-toggle:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: ' LIGHT MODE';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #ffffff 3%, #ff0000 5%, #040404e2 5%);
+  text-shadow: -3px -3px 0px #0272fb, 3px 3px 0px #fc03a5;
+  clip-path: var(--slice-0);
+}
+
+.btn-toggle:hover:after {
+  animation: 1s toggle;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes toggle {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
